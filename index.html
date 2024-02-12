@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KC28TS4RKY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KC28TS4RKY');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2: Energies of Subatomic Particles</title>
+
+  <link href="./style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="./scroll.js"></script>
+  <script src="./sketch.js"></script>
+  <script src="./graph.js"></script>
+</head>
+
+<body id="body_parent" onload="StartScroll()">
+  <a href="../index.html"><img id="back-icon" src="../images/arrow-left.svg" /></a>
+  <div class="container">
+    <div class="row title-row">
+      <h1 class="col-lg-12">ENERGIES OF SUBATOMIC PARTICLES</h1>
+      <div class="col-lg-1"></div>
+      <p class="col-lg-10">
+        So far, we have seen that an electron may exist in various states which we called them orbitals. A key concept
+        for understanding semiconductor physics is that each orbital has a distinct energy; hence, the allowed energy
+        levels for an electron are quantized. Here we review the concepts of kinetic and potential energies in classical
+        physics and study the quantized energy levels of electrons in a hydrogen atom.
+      </p>
+      <div class="col-lg-1"></div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_1">
+      <div class="col-lg-4">
+        <h1>Hydrogen Atom</h1>
+        <p>Once again, we look at a Hydrogen atom that consists of one electron and one proton.
+        </p>
+        <p>These subatomic particles are equally, but oppositely, charged.</p>
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_2">
+      <div class="col-lg-4">
+        <h1>Coulomb Force</h1>
+        <p>The attraction force between the electron and proton is governed by the Coulomb's law:</p>
+        <p>\[F = {q^2 \over 4 \pi \epsilon_0 r^2}\]</p>
+        <p>Here \[\epsilon_0\] is permittivity of free space, \[q\] is electron charge, and \[r\] is the distance
+          between the
+          particles.
+        </p>
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_2and5">
+      <div class="col-lg-4">
+        <h1>The Potential Energy</h1>
+        <p>The electron’s potential energy at any point in space is the work done by an external force to move the
+          electron from the reference point to that point at a constant velocity.</p>
+        <p>To move the electron at constant velocity, we need to apply an external force that is equal but opposite to the
+          Coulomb force. </p>
+        <svg id="pe-viz"></svg>
+        <p>When is the work done on the electron positive and when is negative? When is the potential energy positive
+          and when is it negative?</p>
+        <p>If we define the potential to be zero at infinity, the potential energy can be calculated as \[E_p = {-q^2
+          \over4 \pi \epsilon_0 r}\]</p>
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_3">
+      <div class="col-lg-4">
+        <h1>Total Energy of Electron</h1>
+        <p>The classical model assumed that the electron revolves around the proton, giving rise to a kinetic energy
+          defined by \[E_k = {1 \over 2} m v ^2\]</p>
+        <svg id="d3-viz"></svg>
+        <p>Note that we have slowed down the electron rotation by many orders of magnitude for demonstration purposes.
+        </p>
+        <!-- <p>The total energy of the electron would hence be the sum of the potential and kinetic energies, as shown.</p>
+        <p>We can see that these are change with changing radii of the electron.</p> -->
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_3and5">
+      <div class="col-lg-4">
+        <h1>Absorption of Energy</h1>
+        <p>
+          If a photon is shined on a hydrogen atom, the electron may absorb its energy. With the classical model, any
+          photon can potentially be absorbed.
+        </p>
+        <svg id="d3-viz"></svg>
+        <button type="button" onclick="reset()">Click to reset!</button>
+        <!-- <p>If the classical model was correct, we would observe all light being absorbed by the gas, and see a dark
+          screen throughout as a result.</p> -->
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_4">
+      <div class="col-lg-4">
+        <h1>Observed Transition</h1>
+        <p>However, the experiments show only photos with particular wavelengths (hence energies) are absorbed.</p>
+        <svg id="sec-viz"></svg>
+        <button type="button" onclick="reset()">Click to reset!</button>
+        <p>Can you find which photon energies are absorbed?</p>
+        <p>Each distinct energy level corresponds to an orbital, with 1S having the lowest energy level (n=1) and 2S,
+          2Px, 2Py,2Pz have the second lowest energy levels (n=2). For other atoms that have more than one electron, 2P
+          orbitals have a slightly larger energy compared to 2S due to electron-electron interaction. </p>
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_5">
+      <div class="col-lg-4">
+        <h1>Unstable orbitals</h1>
+        <p>
+          Moreover, a Hydrogen atom in an excited state would emit a photon and lose energy.
+        </p>
+        <svg id="sec-viz"></svg>
+        <button type="button" onclick="reset()">Click to reset!</button>
+        <p>
+          Photons with which energies are emitted?
+        </p>
+      </div>
+    </div>
+    <div class="row sub-atomic-particle-row" id="scene_6">
+      <div class="col-lg-4">
+        <h1>Photon Absorption and Emission</h1>
+        <p>Can you excited the electron to the 3rd energy level by shining the right photons?</p>
+        <svg id="sec-viz"></svg>
+        <button type="button" onclick="reset()">Click to reset!</button>
+        <p>The transition from an unstable state to a lower state is a stochastic process with an average lifetime on the order of 10<sup>-8</sup>s. </p>
+      </div>
+    </div>
+    <div id="visualization">
+
+    </div>
+  </div>
+</body>
+
+</html>
